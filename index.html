@@ -14,18 +14,24 @@
   </head>
   <body>
     <img class="logo" src="images/logo.svg" alt="base apparel logo" />
-    <img
-      class="img-hero"
-      src="images/hero-mobile.jpg"
-      alt="picture of a medium length hair girl wearing pink"
-    />
+
+    <picture class="img-hero">
+      <source media="(min-width: 600px)" srcset="images/hero-desktop.jpg" />
+      <img
+        src="images/hero-mobile.jpg"
+        alt="picture of a medium length hair girl wearing pink"
+      />
+    </picture>
+
     <div class="news-container">
       <h1><span class="title-span">WE'RE</span> COMING SOON</h1>
+
       <p class="news-paragraph">
         Hello fellow shoppers! We're currently building our new fashion store.
         Add your email below to stay up-to-date with announcements and our
         launch deals.
       </p>
+
       <div class="input-container">
         <input
           class="input-email"
@@ -33,9 +39,12 @@
           placeholder="Email Address"
           type="email"
           id="email-el"
-          name="Email Address"
+          name="email"
         />
-        <button type="submit" id="submit-email" class="submit-email">></button>
+
+        <button type="submit" id="submit-email" class="submit-btn">
+          <img src="images/icon-arrow.svg" alt="arrow icon to the right" />
+        </button>
       </div>
     </div>
   </body>
