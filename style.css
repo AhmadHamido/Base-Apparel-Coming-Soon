@@ -5,7 +5,7 @@
 }
 
 body {
-  background-image: url(images/bg-pattern-desktop.svg);
+  background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
   font-family: "Josefin Sans", sans-serif;
   display: grid;
   grid-template-columns: 2em 1fr 2em;
@@ -43,8 +43,11 @@ h1 {
   margin: 2em 0;
 }
 
-.img-hero {
+.image-container {
   grid-column: 1 / -1;
+  background: url(images/hero-mobile.jpg) no-repeat center center;
+  background-size: cover;
+  height: 37vh;
   margin-bottom: 3.5em;
 }
 
@@ -70,6 +73,7 @@ h1 {
   border: 1px solid #ce9898;
   background: transparent;
   grid-column: 1 / -1;
+  font-weight: 600;
 }
 
 .submit-btn {
@@ -109,9 +113,29 @@ Layout
 Media Query
 =========== */
 
-@media (min-width: 600px) {
+@media (min-width: 800px) {
   body {
-    grid-template: repeat(3, 1fr) / 10em 1fr 10em 1fr;
+    background: url(images/bg-pattern-desktop.svg) no-repeat;
+    grid-template:
+      minmax(100px, 200px)
+      minmax(300px, 404px)
+      minmax(75px, 100px)
+      /
+      minmax(80px, 165px)
+      minmax(300px, 450px)
+      minmax(100px, 220px)
+      minmax(200px, 610px);
+  }
+
+  .logo {
+    margin: 0;
+  }
+
+  .image-container {
+    background: url(images/hero-desktop.jpg) no-repeat center center;
+    grid-row: 1 / -1;
+    grid-column: 4;
+    margin-bottom: 0;
     height: 100vh;
   }
 
@@ -127,19 +151,14 @@ Media Query
     width: 100px;
   }
 
-  .img-hero {
-    grid-column: -1;
-    grid-row: 1 / -1;
-  }
-
   .logo,
   .news-container {
-    grid-column: 2 / 4;
+    grid-column: 2;
     align-self: center;
   }
 
   .news-container {
-    justify-self: center;
+    /* justify-self: center; */
     text-align: left;
   }
 }
